@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="./images/favicon.ico"/>
-    <title>{{ 'label.heading.mifosxclient' | translate }}</title>
+<!--    <link rel="icon" type="image/png" href="./images/favicon.ico"/>-->
+    <title>{{ 'label.heading.client' | translate }}</title>
     <style>[data-ng-cloak] {
         display: none !important;
     }</style>
@@ -15,13 +15,15 @@
 <!--Loader -->
 <div id="loaderWrapper" data-ng-hide="domReady" style="position: absolute; height: 100%; width: 100%; top: 0;">
     <div id="loader" style="margin: 175px auto">
-        <div class="wrapper">
+        <!--<div class="wrapper">
             <div class="bottom triangle"></div>
             <div class="top triangle"></div>
             <div class="left triangle"></div>
             <div class="right triangle"></div>
-          </div>          
-        <img src="images/loader.gif" style="margin: 10px auto" class="img-responsive">
+          </div>    -->
+        <div class="wrapper">
+            ... در حال بارگذاری         </div>
+<!--        <img src="images/loader.gif" style="margin: 10px auto" class="img-responsive">-->
     </div>
 </div>
 
@@ -32,7 +34,7 @@
 
         <div class="row">
             <div class="col-xs-12">
-                <div class="pull-right ">
+                <div class="pull-right " id="language">
                     {{ 'label.input.changelanguage' | translate }}
                     <div class="btn-group" uib-dropdown>
                         <button type="button" class="btn btn-default btn-xs" uib-dropdown-toggle ng-disabled="disabled">
@@ -77,7 +79,7 @@
             <div class="col-xs-12">
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-4 text-center">
-                        <img src="images/mifos-logo-flat.png" alt="Mifos X" style="width:80%; margin:auto;"
+                        <img src="images/mifos-logo-flat.png" alt="CBS" style="width:80%; margin:auto;"
                              class=" text-center img-responsive"/>
                     </div>
                 </div>
@@ -94,20 +96,20 @@
 
                             <form class="form">
 
-                                <div class="form-group">
-                                    <label for="uid">{{ 'label.input.username' | translate | uppercase }}</label>
+                                <div class="form-group" id="username-div">
+                                    <label id="username-lbl" for="uid">{{ 'label.input.username' | translate | uppercase }}</label>
                                     <input type="text" name="username" id="uid" class="form-control"
                                            ng-model="loginCredentials.username"
                                            placeholder="{{ 'label.input.username' | translate |lowercase }}"
-                                           required/>
+                                           required  oninvalid="this.setCustomValidity('نام کاربری را لطفا وارد نمایید')"/>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="pwd">{{ 'label.input.password' | translate | uppercase }}</label>
+                                <div class="form-group" id="password-div">
+                                    <label id="password-lbl" for="pwd">{{ 'label.input.password' | translate | uppercase }}</label>
                                     <input type="password" name="password" id="pwd" class="form-control"
                                            ng-model="loginCredentials.password" autocomplete="new-password"
                                            placeholder="{{ 'label.input.password' | translate | lowercase }}"
-                                           required/>
+                                           required oninvalid="this.setCustomValidity('رمز عبور را لطفا وارد نمایید')"/>
                                 </div>
 
                                 <div class="form-group">
@@ -116,7 +118,7 @@
                                         {{'label.button.signin' | translate }}
                                     </button>
                                     <button class="btn btn-block btn-primary" type="submit" data-ng-show="load">
-                                        <img data-ng-src="images/ring.svg" alt=""> <b>loading...</b>
+                                        <img data-ng-src="images/ring.svg" alt=""> <b>بارگذاری</b>
                                     </button>
                                 </div>
 
@@ -198,7 +200,7 @@
                 <div class="row" >
                     <div class="col-xs-4 text-center">
 
-                        <ul class="list-unstyled">
+                        <!-- <ul class="list-unstyled">
                             <li><h5>{{'label.heading.resources' | translate | uppercase }}</h5></li>
                             <li><a target="https://mifosforge.jira.com/wiki/display/MIFOS/User+Manual"
                                    href="https://mifosforge.jira.com/wiki/display/MIFOS/User+Manual">{{
@@ -208,11 +210,11 @@
                                 'label.anchor.functionalspec' | translate }}</a></li>
                             <li><a href="https://mifosforge.jira.com/wiki/display/MDZ/Welcome+in+the+Zone">{{
                                 'label.anchor.developerzone' | translate }}</a></li>
-                        </ul>
+                        </ul> -->
 
                     </div>
                     <div class="col-xs-4 text-center">
-                        <ul class="list-unstyled">
+                        <!-- <ul class="list-unstyled">
                             <li><h5>{{'label.heading.community' | translate | uppercase }}</h5></li>
                             <li><a target="https://groups.google.com/forum/#!forum/mifosusers"
                                    href="https://groups.google.com/forum/#!forum/mifosusers">{{
@@ -225,11 +227,11 @@
                                    href="http://mifos.org/community/communications/mifos-irc">{{ 'label.anchor.irc' |
                                 translate
                                 }}</a></li>
-                        </ul>
+                        </ul> -->
 
                     </div>
                     <div class="col-xs-4 text-center">
-                        <ul class="list-unstyled">
+                        <!-- <ul class="list-unstyled">
                             <li><h5>{{'label.heading.contribute' | translate | uppercase}}</h5></li>
                             <li><a target="https://mifosforge.jira.com/wiki/display/MDZ/Key+Design+Principles"
                                    href="https://mifosforge.jira.com/wiki/display/MDZ/Key+Design+Principles/">{{
@@ -241,7 +243,7 @@
                             <li><a target="http://mifos.org/donate/" href="http://mifos.org/donate/">{{
                                 'label.anchor.donate' |
                                 translate }}</a></li>
-                        </ul>
+                        </ul> -->
 
                     </div>
                 </div>
@@ -252,10 +254,10 @@
                     <div class="col-sm-6 col-sm-offset-3 text-center">
                         <br>
 
-                        <p class=" text-muted"><span ng-bind-html="text"></span>
+                        <!-- <p class=" text-muted"><span ng-bind-html="text"></span>
                             <br>
                             <span style=" display: inline-block; margin:auto;min-width:40px; border-bottom:2px solid #e0e0e0;">&nbsp;</span>
-                        </p>
+                        </p> -->
 
                     </div>
                 </div>
@@ -263,7 +265,7 @@
             <div class="row" ng-hide = "response.uiDisplayConfigurations.whiteLabel.loginPage.releaseDetails">
                 <p class="text-center text-muted small">
                     <span>{{ 'label.heading.version' | translate }} {{ version }}</span>
-                    <br/> <span>{{response.uiDisplayConfigurations.whiteLabel.loginPage.companyName}}{{ 'label.heading.uptodate' | translate }}</span>
+                    <!-- <br/> <span>{{response.uiDisplayConfigurations.whiteLabel.loginPage.companyName}}{{ 'label.heading.uptodate' | translate }}</span> -->
                 </p>
             </div>
             </div>
@@ -295,12 +297,12 @@
                                 </a>
                             </li>
 
-                            <li>
+                           <!-- <li>
                                 <a class="black" href="#/nav/offices">
                                     <i class="fa fa-compass "></i>
                                     <span>{{'label.anchor.navigation' | translate}}</span>
                                 </a>
-                            </li>
+                            </li>-->
 
                             <li>
                                 <a class="black" href="#/tasks">
@@ -374,12 +376,12 @@
                                 </a>
                             </li>
 
-                            <li>
+                            <!--<li>
                                 <a class="black" ng-click="helpf()">
                                     <i class="fa fa-question-circle"></i>
                                     <span>{{'label.anchor.help' | translate }}</span> &nbsp; <i class="fa fa-external-link"></i>
                                 </a>
-                            </li>
+                            </li>-->
 
                         </ul>
                     </div>
