@@ -12,6 +12,12 @@
 @import url(../bower_components/chosen/chosen.css);
 @import url(../bower_components/ng-scrollbar/dist/ng-scrollbar.css);
 /* line 9, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_normalize.scss */
+
+
+* {
+  font-family: myFirstFont;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -6753,6 +6759,8 @@ a.thumbnail.active {
   background-color: #f2dede;
   border-color: #ebccd1;
   color: #a94442;
+  font-family: myFirstFont;
+  text-align: center;
 }
 /* line 8, ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/_alerts.scss */
 .alert-danger hr {
@@ -22395,4 +22403,52 @@ Interactive Layer
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@font-face {
+  font-family: myFirstFont;
+  src: url("../fonts/byekan.ttf");
+}
+
+#username-lbl{
+direction: rtl;
+  font-family: myFirstFont;
+  /*direction: unset !important;*/
+  /*text-align: right;*/
+  /*direction: rtl !important;*/
+}
+#username-div{
+  direction: rtl;
+}
+#uid{
+  text-align: left;
+}
+
+#password-div{
+  direction: rtl;
+}
+#password-lbl{
+  direction: rtl;
+  font-family: myFirstFont;
+  /*direction: unset !important;*/
+  /*text-align: right;*/
+  /*direction: rtl !important;*/
+}
+
+#pwd{
+  text-align: left;
+
+}
+
+#login-button{
+  font-family: myFirstFont;
+}
+
+#language{
+  font-family: myFirstFont;
+}
+
+#createuserfrm{
+  direction: rtl;
 }
