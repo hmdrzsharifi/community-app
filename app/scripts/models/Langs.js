@@ -1,7 +1,9 @@
 (function(module) {
     mifosX.models = _.extend(module, {
         Langs: [
-            { "name": "English", "code": "en" },
+            { "name": "Persian", "code": "fa" },
+            { "name": "English", "code": "en" }/*,
+
             { "name": "Français", "code": "fr" },
             { "name": "Español", "code": "es" },
             { "name": "Português", "code": "pt" },
@@ -15,6 +17,7 @@
             { "name": "ဇော်ဂျီ", "code": "my" },
             { "name": "አማርኛ", "code": "et" },
             { "name": "తెలుగు", "code": "te"}
+*/
         ]
     });
 }(mifosX.models || {}));
