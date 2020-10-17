@@ -5,7 +5,7 @@ This is the default web application built on top of the MifosX platform for the 
 
 ## Online Demo
 
-<a target="_blank" href="https://demo.openmf.org">Access the online demo version here</a>
+<a target="_blank" href="https://demo.mifos.io">Access the online demo version here</a>
 
 ## Building from source
 
@@ -39,6 +39,7 @@ If this fails with `npm WARN checkPermissions Missing write access to /usr/local
    ```
     bower install
    ```
+For Windows PC, before you run `npm install` check in the root folder if any package-lock.json is generated and delete it then you can run `npm install` other wise you will be faced with `Npm ERR! code EPERM  error errno -4048 error { Error: EPERM: operation not permitted, rename ....` a permission error even if you are using administrator user 
    ```
     npm install
    ```
@@ -84,15 +85,17 @@ Edit the value of property "security" in <a href="https://github.com/openMF/comm
 
 ### Connecting to a MifosX Platform running on a different host:
 
-By default, when the app is running from the local filesystem, it will connect to the platform (fineract-provider REST API) deployed on demo.openmf.org.
+By default, when the app is running from the local filesystem, it will connect to the platform (fineract-provider REST API) deployed on demo.mifos.io.
 
 The app connects to the platform running on the same host/port when deployed on a server.
 
-If you want to connect to the API running elsewhere, then append the baseApiUrl and tenantIdentifier as query parameters,
+If you want to connect to the Fineract API running elsewhere, then append the `baseApiUrl` and `tenantIdentifier` as query parameters, for example:
 
-e.g. http://localhost:9002/?baseApiUrl=https://localhost:8443&tenantIdentifier=default
+* http://localhost:9002/?baseApiUrl=https://localhost:8443&tenantIdentifier=default if you are running the Fineract backend locally; note that because of the default self signed SSL certification, on the first time use (or after you have cleared the cookies from your browser), you will need to first bypass the security warning by accepting the SSL in your browser by going once to https://localhost:8443/fineract-provider/api/v1&tenantIdentifier=default and accepting it.
 
-e.g. http://localhost:9002/?baseApiUrl=https://demo.openmf.org&tenantIdentifier=default
+* http://localhost:9002/?baseApiUrl=https://demo.fineract.dev&tenantIdentifier=default to use https://www.fineract.dev which always automatically runs the very latest Fineract back-end
+
+* http://localhost:9002/?baseApiUrl=https://demo.mifos.io&tenantIdentifier=default
 
 ## Adding dependencies
 
